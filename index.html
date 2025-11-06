@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Triumph Crest Wellness Harbour</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --tranquil-blue: #5D8AA8;
@@ -12,19 +13,21 @@
       --warm-gold: #D4AF37;
       --cream: #F5F5DC;
       --deep-teal: #2C4A52;
-      --radius: 14px;
       font-family: 'Inter', sans-serif;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
     body {
       background: var(--cream);
       color: var(--deep-teal);
-      line-height: 1.6;
       font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      font-size: 18px;
     }
+
     a { text-decoration: none; color: var(--tranquil-blue); }
 
-    /* ===== Header Styling ===== */
+    /* ===== HEADER ===== */
     header {
       position: sticky;
       top: 0;
@@ -33,40 +36,42 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 12px 20px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+      padding: 18px 40px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
       border-bottom: 2px solid #eee2a2;
     }
+
     .top-logo img {
-      width: 160px;
+      width: 190px;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
     }
 
-    /* ===== Navigation ===== */
+    /* ===== NAVIGATION ===== */
     #navbar {
       display: flex;
-      gap: 20px;
+      gap: 28px;
       align-items: center;
-      transition: all 0.3s ease;
-    }
-    #navbar a {
-      font-weight: 600;
-      padding: 6px 10px;
-      transition: color 0.3s, background 0.3s;
-    }
-    #navbar a:hover {
-      color: #fff;
-      background: var(--warm-gold);
-      border-radius: 8px;
     }
 
-    /* ===== Hamburger Menu Icon ===== */
+    #navbar a {
+      font-weight: 600;
+      padding: 10px 16px;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    #navbar a:hover {
+      background: var(--warm-gold);
+      color: white;
+      transform: translateY(-2px);
+    }
+
     #menu-icon {
       display: none;
-      font-size: 28px;
+      font-size: 30px;
       cursor: pointer;
       color: var(--deep-teal);
       background: none;
@@ -74,58 +79,195 @@
     }
 
     @media(max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
       #navbar {
         display: none;
         flex-direction: column;
         background: #fff;
         width: 100%;
-        padding: 15px 0;
+        padding: 20px 0;
         border-radius: 10px;
-        margin-top: 10px;
         box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       }
-      #navbar.active {
-        display: flex;
-      }
-      #menu-icon {
-        display: block;
-      }
+      #navbar.active { display: flex; }
+      #menu-icon { display: block; align-self: flex-end; }
     }
 
-    /* ===== Footer ===== */
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+      background: linear-gradient(135deg, #5D8AA8, #2C4A52);
+      padding: 120px 20px 160px;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero a {
+      display: inline-block;
+      margin-top: 25px;
+      background: var(--warm-gold);
+      color: white;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .hero a:hover {
+      background: #b68b2f;
+      transform: scale(1.05);
+    }
+
+    /* ===== SECTION STYLES ===== */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: var(--deep-teal);
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    /* ===== ABOUT ===== */
+    #about p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #3a4a4a;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ===== SERVICES ===== */
+    #services {
+      background: linear-gradient(120deg, #f7fdfb, #eef5ef);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    }
+
+    #services h3 {
+      color: #1f3d3d;
+      margin-top: 30px;
+      border-left: 5px solid #6ba29e;
+      padding-left: 12px;
+      font-size: 1.25rem;
+    }
+
+    #services p {
+      margin-top: 6px;
+      color: #374a49;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    #testimonials {
+      background: #fffef9;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    }
+
+    #testimonials div {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    #testimonials .quote {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      font-style: italic;
+    }
+
+    /* ===== CONTACT ===== */
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    #contact input, #contact button {
+      padding: 14px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    #contact button {
+      background: var(--warm-gold);
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #contact button:hover {
+      background: #b68b2f;
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
     .footer {
       background-color: #f9f6e8;
       text-align: center;
-      padding: 20px 10px;
+      padding: 30px 15px;
       color: #2b4c6f;
-      font-size: 0.95rem;
+      font-size: 1rem;
       line-height: 1.8;
       border-top: 2px solid #e0d6b0;
     }
+
     .footer a {
       color: #d4a017;
       text-decoration: none;
       font-weight: 500;
     }
+
     .footer a:hover {
       text-decoration: underline;
       color: #b3890f;
     }
 
-    /* ===== WhatsApp Floating Button ===== */
+    /* ===== WHATSAPP FLOAT ===== */
     #whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 25px;
+      right: 25px;
       background: var(--moss-green);
       color: white;
-      font-size: 28px;
-      padding: 12px 16px;
+      font-size: 30px;
+      padding: 14px 16px;
       border-radius: 50%;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       z-index: 999;
       animation: pulse 2s infinite;
     }
+
     @keyframes pulse {
       0% { transform: scale(1); }
       50% { transform: scale(1.1); }
@@ -135,138 +277,99 @@
 </head>
 
 <body>
-  <div class="container">
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="top-logo">
+      <img src="https://i.postimg.cc/G28B4Lf7/IMG-20251105-WA0002-1.jpg" alt="Triumph Crest Wellness Harbour Logo">
+    </div>
 
-    <!-- ===== STICKY HEADER ===== -->
-    <header>
-      <div class="top-logo">
-        <img src="https://i.postimg.cc/G28B4Lf7/IMG-20251105-WA0002-1.jpg"
-             alt="Triumph Crest Wellness Harbour Logo">
-      </div>
+    <button id="menu-icon">☰</button>
 
-      <!-- Hamburger Menu Icon -->
-      <button id="menu-icon">☰</button>
+    <nav id="navbar">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact" style="background:var(--warm-gold);color:white;">Book</a>
+    </nav>
+  </header>
 
-      <nav id="navbar">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact" style="background:var(--warm-gold);color:white;padding:6px 12px;border-radius:8px;">Book</a>
-      </nav>
-    </header>
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Guiding You Toward Emotional Balance & Growth</h1>
+    <p>At Triumph Crest Wellness Harbour, we believe every challenge is a stepping stone to growth. Let us be your anchor as you navigate toward clarity and confidence.</p>
+    <a href="#contact">Book a Session</a>
+  </section>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="card" style="margin-top:20px;position:relative;overflow:hidden;background:linear-gradient(180deg,#5D8AA8,#F5F5DC);color:white;text-align:center;">
-      <svg viewBox="0 0 800 400" style="position:absolute;bottom:0;left:0;width:100%;height:auto;">
-        <defs>
-          <linearGradient id="sunrise" x1="0" y1="1" x2="0" y2="0">
-            <stop offset="0%" stop-color="#4A6B3D" />
-            <stop offset="100%" stop-color="#D4AF37" />
-          </linearGradient>
-        </defs>
-        <circle cx="400" cy="300" r="50" fill="url(#sunrise)">
-          <animate attributeName="cy" values="350;200;350" dur="8s" repeatCount="indefinite" />
-        </circle>
-        <path d="M0 350 Q150 300 400 350 T800 350 V400 H0 Z" fill="#2C4A52"></path>
-      </svg>
-      <div style="position:relative;z-index:2;padding:60px 20px;">
-        <h1>Guiding You Toward Emotional Balance & Growth</h1>
-        <p style="margin-top:10px;">At Triumph Crest Wellness Harbour, we believe every challenge is a stepping stone to growth. Let us be your anchor as you navigate toward clarity and confidence.</p>
-        <div style="margin-top:18px;">
-          <a href="#contact" style="background:var(--warm-gold);color:white;padding:10px 18px;border-radius:8px;">Book a Session</a>
-        </div>
-      </div>
-    </section>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We provide compassionate, confidential, and evidence-based therapy to help you rediscover inner peace and purpose. Our goal is to walk with you toward healing and personal growth, every step of the way.</p>
+  </section>
 
-    <!-- ===== MAIN CONTENT ===== -->
-    <main style="display:grid;gap:20px;margin-top:20px;">
-      <section id="about" class="card">
-        <h2>About Us</h2>
-        <p>We provide compassionate, confidential, and evidence-based therapy to help you rediscover inner peace and purpose.</p>
-      </section>
+  <!-- ===== SERVICES ===== -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <h3>Individual Therapy</h3>
+    <p>Discover a safe and supportive space to reflect, heal, and grow. Our one-on-one sessions help you manage stress, find clarity, and build emotional resilience for a more balanced life.</p>
 
-      <!-- ===== SERVICES SECTION ===== -->
-      <section id="services" style="
-        background: linear-gradient(135deg, #f7fdfb 0%, #e6f3f2 50%, #fefefb 100%);
-        color: #2c3e3f;
-        padding: 60px 30px;
-        border-radius: 24px;
-        max-width: 900px;
-        margin: 80px auto;
-        box-shadow: 0 10px 28px rgba(0,0,0,0.08);
-        line-height: 1.7;
-      ">
-        <h2 style="text-align: center; color: #174b4f; font-size: 2rem; font-weight: 700; margin-bottom: 35px;">
-          Our Services
-        </h2>
-        <div>
-          <h3 style="color:#1f3d3d;border-left:4px solid #6ba29e;padding-left:10px;">Individual Therapy</h3>
-          <p>Discover a safe and supportive space to reflect, heal, and grow. Our one-on-one sessions help you manage stress, find clarity, and build emotional resilience for a more balanced life.</p>
-          <h3 style="color:#1f3d3d;border-left:4px solid #6ba29e;padding-left:10px;">Couples Counselling</h3>
-          <p>Reconnect and strengthen your relationship through better communication, understanding, and trust.</p>
-          <h3 style="color:#1f3d3d;border-left:4px solid #6ba29e;padding-left:10px;">Family & Teen Support</h3>
-          <p>We help families navigate challenges with empathy, insight, and healing for stronger bonds.</p>
-          <h3 style="color:#1f3d3d;border-left:4px solid #6ba29e;padding-left:10px;">Online Therapy Sessions</h3>
-          <p>Access therapy wherever you are — private, flexible, and supportive professional sessions.</p>
-        </div>
-      </section>
+    <h3>Couples Counselling</h3>
+    <p>Reconnect and strengthen your relationship through better communication, understanding, and trust.</p>
 
-      <section id="testimonials" class="card" style="background:linear-gradient(180deg,#F5F5DC,#fff);">
-        <h2>Testimonials</h2>
-        <div style="display:grid;gap:12px;margin-top:10px;">
-          <div style="border-radius:12px;background:white;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-            “Warm, professional, and transformative experience.” — J. Mwangi, Client since 2023
-          </div>
-          <div style="border-radius:12px;background:white;padding:14px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-            “A safe place to grow and heal.” — V. Ogutu, client since 2024
-          </div>
-        </div>
-      </section>
-    </main>
+    <h3>Family & Teen Support</h3>
+    <p>We help families navigate challenges with empathy, insight, and healing for stronger bonds.</p>
 
-    <!-- ===== CONTACT FORM ===== -->
-    <section id="contact" class="card" style="margin-top:20px;">
-      <h2>Book a Session</h2>
-      <form onsubmit="return sendToWhatsApp(event)">
-        <input type="text" id="name" placeholder="Full name" required style="width:100%;margin:6px 0;padding:8px;border-radius:8px;border:1px solid #ccc;">
-        <input type="email" id="email" placeholder="Email" required style="width:100%;margin:6px 0;padding:8px;border-radius:8px;border:1px solid #ccc;">
-        <input type="tel" id="phone" placeholder="Phone / WhatsApp" required style="width:100%;margin:6px 0;padding:8px;border-radius:8px;border:1px solid #ccc;">
-        <button type="submit" style="background:var(--warm-gold);color:white;border:none;padding:10px 16px;border-radius:10px;margin-top:10px;">Send via WhatsApp</button>
-      </form>
-    </section>
+    <h3>Online Therapy Sessions</h3>
+    <p>Access therapy wherever you are — private, flexible, and supportive professional sessions.</p>
+  </section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-      <p>
-        📞 <a href="tel:+254720305619">+254 720 305619</a> |
-        📞 <a href="tel:+254759879989">+254 759 879989</a> |
-        ✉ <a href="mailto:info@triumphcrestwh.com">info@triumphcrestwh.com</a> |
-        💬 <a href="https://wa.me/254720305619" target="_blank">WhatsApp</a>
-      </p>
-      <div style="margin-top:10px;">
-        © 2025 Triumph Crest Wellness Harbour <br>
-        <span style="color:#777;">Designed by </span>
-        <strong style="color:#b88a44;">Moffat Khayundi</strong> |
-        <a href="mailto:moffatogutu255@gmail.com" style="color:#b88a44;text-decoration:none;">moffatogutu255@gmail.com</a>
-      </div>
-    </footer>
-  </div>
+  <!-- ===== TESTIMONIALS ===== -->
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div>
+      <div class="quote">“Warm, professional, and transformative experience.” — <strong>J. Mwangi</strong></div>
+      <div class="quote">“A safe place to grow and heal.” — <strong>V. Ogutu</strong></div>
+    </div>
+  </section>
 
-  <!-- Floating WhatsApp Button -->
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h2>Book a Session</h2>
+    <form onsubmit="return sendToWhatsApp(event)">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Phone / WhatsApp" required>
+      <button type="submit">Send via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>
+      📞 <a href="tel:+254720305619">+254 720 305619</a> |
+      📞 <a href="tel:+254759879989">+254 759 879989</a> |
+      ✉ <a href="mailto:info@triumphcrestwh.com">info@triumphcrestwh.com</a> |
+      💬 <a href="https://wa.me/254720305619" target="_blank">WhatsApp</a>
+    </p>
+    <div style="margin-top:10px;">
+      © 2025 Triumph Crest Wellness Harbour <br>
+      <span style="color:#777;">Designed by </span>
+      <strong style="color:#b88a44;">Moffat Khayundi</strong> |
+      <a href="mailto:moffatogutu255@gmail.com" style="color:#b88a44;">moffatogutu255@gmail.com</a>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
   <a href="https://wa.me/254720305619" target="_blank" id="whatsapp-float" title="Chat on WhatsApp">💬</a>
 
   <script>
-    // WhatsApp form
     function sendToWhatsApp(e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const text = encodeURIComponent(`Hi, I'm ${name}. I’d like to book a counselling session. My contact: ${phone}.`);
       window.open(`https://wa.me/254720305619?text=${text}`, '_blank');
-      return false;
     }
 
-    // Mobile Menu Toggle
     const menuIcon = document.getElementById('menu-icon');
     const navbar = document.getElementById('navbar');
     menuIcon.addEventListener('click', () => {
