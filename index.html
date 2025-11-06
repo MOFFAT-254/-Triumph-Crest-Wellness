@@ -270,64 +270,7 @@
   }
 
   /* ===== HAMBURGER ICON ===== */
-  .menu-icon {
-    display: none;
-    font-size: 30px;
-    color: var(--deep-teal);
-    cursor: pointer;
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background: rgba(245, 245, 220, 0.8);
-    border-radius: 8px;
-    padding: 5px 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
 
-  /* ===== RESPONSIVE ===== */
-  @media (max-width: 700px) {
-    .menu-icon {
-      display: block;
-    }
-
-    nav {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      background: #fff9e5;
-      width: 90%;
-      margin: 10px auto;
-      padding: 15px 0;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      display: block;
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-    }
-
-    nav.show {
-      display: flex;
-    }
-
-    .logo-img {
-      width: 240px;
-    }
-  }
-</style>
-
-<!-- ===== JS TOGGLE MENU ===== -->
-<script>
-  const menuIcon = document.getElementById("menu-icon");
-  const navbar = document.getElementById("navbar");
-
-  menuIcon.addEventListener("click", () => {
-    navbar.classList.toggle("show");
-  });
-</script>
             <section class="card"
                   style="margin-top:20px;position:relative;overflow:hidden;background:linear-gradient(180deg,#5D8AA8,#F5F5DC);color:white;text-align:center;">
                   <svg viewBox="0 0 800 400" style="position:absolute;bottom:0;left:0;width:100%;height:auto;">
