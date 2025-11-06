@@ -96,43 +96,6 @@
       #menu-icon { display: block; align-self: flex-end; }
     }
 
-    /* ===== HERO SECTION ===== */
-    .hero {
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      color: white;
-      background: linear-gradient(135deg, #5D8AA8, #2C4A52);
-      padding: 120px 20px 160px;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .hero a {
-      display: inline-block;
-      margin-top: 25px;
-      background: var(--warm-gold);
-      color: white;
-      padding: 14px 28px;
-      border-radius: 10px;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-
-    .hero a:hover {
-      background: #b68b2f;
-      transform: scale(1.05);
-    }
 
     /* ===== SECTION STYLES ===== */
     section {
@@ -156,6 +119,93 @@
       max-width: 800px;
       margin: 0 auto;
     }
+    /* ===== HERO SECTION WITH REALISTIC ANIMATED MOUNTAINS ===== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #5D8AA8, #2C4A52);
+  padding: 120px 20px 160px;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero a {
+  display: inline-block;
+  margin-top: 25px;
+  background: var(--warm-gold);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.hero a:hover {
+  background: #b68b2f;
+  transform: scale(1.05);
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
+.hero-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.sun {
+  animation: rise 12s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+.sun-core {
+  animation: pulse 6s ease-in-out infinite alternate;
+}
+
+.mountain-back {
+  animation: float 10s ease-in-out infinite alternate;
+  opacity: 0.9;
+}
+
+.mountain-front {
+  animation: float 8s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes rise {
+  0% { transform: translateY(40px); opacity: 0.8; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+@keyframes pulse {
+  0% { r: 28; opacity: 0.9; }
+  100% { r: 34; opacity: 1; }
+}
 
     /* ===== SERVICES ===== */
     #services {
@@ -292,14 +342,54 @@
       <a href="#contact" style="background:var(--warm-gold);color:white;">Book</a>
     </nav>
   </header>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <h1>Guiding You Toward Emotional Balance & Growth</h1>
+  <p>At Triumph Crest Wellness Harbour, we believe every challenge is a stepping stone to growth. Let us be your anchor as you navigate toward clarity and confidence.</p>
+  <a href="#contact">Book a Session</a>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <h1>Guiding You Toward Emotional Balance & Growth</h1>
-    <p>At Triumph Crest Wellness Harbour, we believe every challenge is a stepping stone to growth. Let us be your anchor as you navigate toward clarity and confidence.</p>
-    <a href="#contact">Book a Session</a>
-  </section>
+  <!-- Realistic Animated Mountains and Sun -->
+  <svg class="hero-svg" viewBox="0 0 800 400" preserveAspectRatio="none">
+    <!-- Sky Gradient -->
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#6fb1fc"/>
+        <stop offset="100%" stop-color="#2C4A52"/>
+      </linearGradient>
 
+      <!-- Mountain gradients -->
+      <linearGradient id="mountain1" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#6d8b74"/>
+        <stop offset="100%" stop-color="#2f4f3f"/>
+      </linearGradient>
+
+      <linearGradient id="mountain2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#507c63"/>
+        <stop offset="100%" stop-color="#1f3a2f"/>
+      </linearGradient>
+
+      <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFD700" stop-opacity="0.9"/>
+        <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- Sky -->
+    <rect width="800" height="400" fill="url(#sky)" />
+
+    <!-- Glowing sun -->
+    <circle class="sun" cx="400" cy="200" r="60" fill="url(#sun-glow)" />
+    <circle class="sun-core" cx="400" cy="200" r="30" fill="#FFD700" />
+
+    <!-- Mountains layers -->
+    <path class="mountain-back" d="M0 260 L150 140 L350 240 L500 130 L700 240 L800 200 L800 400 L0 400 Z" fill="url(#mountain1)" />
+    <path class="mountain-front" d="M0 300 L200 180 L400 280 L600 160 L800 300 L800 400 L0 400 Z" fill="url(#mountain2)" />
+    
+    <!-- Ground -->
+    <rect y="300" width="800" height="100" fill="#fdf9e7" />
+  </svg>
+</section>
+  
   <!-- ===== ABOUT ===== -->
   <section id="about">
     <h2>About Us</h2>
