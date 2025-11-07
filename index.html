@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Triumph Crest Wellness Harbour</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root {
@@ -399,6 +401,36 @@
       50% { transform: scale(1.1); }
       100% { transform: scale(1); }
     }
+    /* ===== SOCIAL MEDIA ICONS ===== */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  opacity: 0.9;
+}
+
+/* Platform colors */
+.facebook { background: #3b5998; }
+.instagram { background: #e4405f; }
+.whatsapp { background: #25d366; }
+.linkedin { background: #0077b5; }
   </style>
 </head>
 
@@ -568,21 +600,31 @@
     </form>
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <p>
-      📞 <a href="tel:+254720305619">+254 720 305619</a> |
-      📞 <a href="tel:+254759879989">+254 759 879989</a> |
-      ✉ <a href="mailto:info@triumphcrestwh.com">info@triumphcrestwh.com</a> |
-      💬 <a href="https://wa.me/254720305619" target="_blank">WhatsApp</a>
-    </p>
-    <div style="margin-top:10px;">
-      © 2025 Triumph Crest Wellness Harbour <br>
-      <span style="color:#777;">Designed by </span>
-      <strong style="color:#b88a44;">Moffat Khayundi</strong> |
-      <a href="mailto:moffatogutu255@gmail.com" style="color:#b88a44;">moffatogutu255@gmail.com</a>
-    </div>
-  </footer>
+<!-- ===== FOOTER ===== -->
+<footer class="footer" style="text-align:center; padding:30px; background:#fefcf6; color:#333;">
+  <p style="margin-bottom:10px;">
+    📞 <a href="tel:+254720305619" style="color:#355c7d; text-decoration:none;">+254 720 305619</a> |
+    📞 <a href="tel:+254759879989" style="color:#355c7d; text-decoration:none;">+254 759 879989</a> |
+    ✉ <a href="mailto:info@triumphcrestwh.com" style="color:#355c7d; text-decoration:none;">info@triumphcrestwh.com</a> |
+    💬 <a href="https://wa.me/254720305619" target="_blank" style="color:#25d366; text-decoration:none;">WhatsApp</a>
+  </p>
+
+  <!-- Social Media Icons -->
+  <div class="social-links" style="margin:15px 0;">
+    <a href="https://facebook.com/YourPageHere" target="_blank" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://instagram.com/YourPageHere" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://wa.me/254720305619" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://linkedin.com/in/YourPageHere" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <div style="margin-top:10px;">
+    © 2025 Triumph Crest Wellness Harbour <br>
+    <span style="color:#777;">Designed by </span>
+    <strong style="color:#b88a44;">Moffat Khayundi</strong> |
+    <a href="mailto:moffatogutu255@gmail.com" style="color:#b88a44; text-decoration:none;">moffatogutu255@gmail.com</a>
+  </div>
+</footer>
+  
 
   <!-- ===== WHATSAPP FLOAT ===== -->
   <a href="https://wa.me/254720305619" target="_blank" id="whatsapp-float" title="Chat on WhatsApp">💬</a>
