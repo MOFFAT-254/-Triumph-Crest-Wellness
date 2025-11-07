@@ -254,7 +254,8 @@
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       font-style: italic;
-    }/* ===== FAQ SECTION ===== */
+    } 
+    /* ===== FAQ SECTION ===== */
 #faq {
   background: #fefcf6;
   border-radius: 20px;
@@ -288,6 +289,9 @@
   outline: none;
   cursor: pointer;
   transition: 0.3s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .faq-question:hover {
@@ -300,11 +304,28 @@
   padding: 15px 20px;
   color: #333;
   border-top: 1px solid #ddd;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Arrow rotation effect */
+.arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .arrow {
+  transform: rotate(180deg);
 }
 
 .faq-item.active .faq-answer {
   display: block;
 }
+
 
     /* ===== CONTACT ===== */
     #contact form {
@@ -465,7 +486,65 @@
     <p>We help families navigate challenges with empathy, insight, and healing for stronger bonds.</p>
 
     <h3>Online Therapy Sessions</h3>
-    <p>Access therapy wherever you are — private, flexible, and supportive professional sessions.</p>
+    <p>Access therapy wherever you are — private, flexible, and supportive pr<!-- ===== FREQUENTLY ASKED QUESTIONS ===== -->
+<section id="faq">
+  <h2>Frequently Asked Questions</h2>
+  <p style="text-align:center; max-width:700px; margin:0 auto 40px; color:#3a4a4a;">
+    Here are some of the most common questions clients ask before beginning therapy.
+  </p>
+
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">
+        1. What can I expect during a counseling session?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Each session provides a safe, confidential space where you can talk openly. Your counselor will help you explore your feelings, identify patterns, and guide you toward healing and growth.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        2. How long does therapy take?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>The duration of therapy varies depending on your needs. Some clients attend for a few sessions, while others prefer ongoing support for deeper self-discovery.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        3. Is counseling confidential?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes. Everything shared during your session remains private and confidential, in accordance with ethical counseling standards.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        4. Do you offer online sessions?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, we provide secure and flexible online therapy sessions so you can access support from wherever you are.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        5. How do I prepare for my first session?
+        <span class="arrow">▼</span>
+      </button>
+      <div class="faq-answer">
+        <p>Simply come as you are. Take a few minutes to reflect on what you’d like to discuss, and be open to exploring your thoughts and emotions.</p>
+      </div>
+    </div>
+  </div>
+</section>ofessional sessions.</p>
   </section>
 
   <!-- ===== TESTIMONIALS ===== -->
@@ -475,50 +554,7 @@
       <div class="quote">“Warm, professional, and transformative experience.” — <strong>J. Mwangi</strong></div>
       <div class="quote">“A safe place to grow and heal.” — <strong>V. Ogutu</strong></div>
     </div>
-  </section><!-- ===== FREQUENTLY ASKED QUESTIONS ===== -->
-<section id="faq">
-  <h2>Frequently Asked Questions</h2>
-  <p style="text-align:center; max-width:700px; margin:0 auto 40px; color:#3a4a4a;">
-    Here are some of the most common questions clients ask before beginning therapy.
-  </p>
 
-  <div class="faq-container">
-    <div class="faq-item">
-      <button class="faq-question">1. What can I expect during a counseling session?</button>
-      <div class="faq-answer">
-        <p>Each session provides a safe, confidential space where you can talk openly. Your counselor will help you explore your feelings, identify patterns, and guide you toward healing and growth.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">2. How long does therapy take?</button>
-      <div class="faq-answer">
-        <p>The duration of therapy varies depending on your needs. Some clients attend for a few sessions, while others prefer ongoing support for deeper self-discovery.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">3. Is counseling confidential?</button>
-      <div class="faq-answer">
-        <p>Yes. Everything shared during your session remains private and confidential, in accordance with ethical counseling standards.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">4. Do you offer online sessions?</button>
-      <div class="faq-answer">
-        <p>Yes, we provide secure and flexible online therapy sessions so you can access support from wherever you are.</p>
-      </div>
-    </div>
-
-    <div class="faq-item">
-      <button class="faq-question">5. How do I prepare for my first session?</button>
-      <div class="faq-answer">
-        <p>Simply come as you are. Take a few minutes to reflect on what you’d like to discuss, and be open to exploring your thoughts and emotions.</p>
-      </div>
-    </div>
-  </div>
-</section>
   
 
   <!-- ===== CONTACT ===== -->
@@ -565,13 +601,14 @@
     menuIcon.addEventListener('click', () => {
       navbar.classList.toggle('active');
     });
-    // ===== FAQ TOGGLE =====
+    // ===== FAQ TOGGLE WITH ARROW =====
 document.querySelectorAll('.faq-question').forEach(button => {
   button.addEventListener('click', () => {
     const faqItem = button.parentElement;
     faqItem.classList.toggle('active');
   });
 });
+
   </script>
 </body>
 </html>
